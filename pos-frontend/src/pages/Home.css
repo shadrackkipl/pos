@@ -1,0 +1,32 @@
+.home{
+    display: flex;
+    flex-direction: row;
+    background-color: #1f1f1f;
+    height: calc(100vh - 5rem);
+    overflow: hidden;
+    gap: 1rem;
+}
+
+
+
+/*LEFT DIV */
+.left-div {
+    flex:3;
+  
+    }
+
+/*RIGHT DIV */
+.right-div {
+ flex:2;
+ background-color: blue;
+}
+
+.home-content{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.home-content .mini-card{
+    flex:1;
+}

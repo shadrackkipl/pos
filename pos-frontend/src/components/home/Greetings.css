@@ -1,0 +1,73 @@
+.greetings {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 34px 0 18px;
+  color: #ffffff;
+}
+
+.greeting-title,
+.greeting-subtitle,
+.greeting-time,
+.greeting-date {
+  margin: 0;
+}
+
+.greeting-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.greeting-subtitle {
+  margin-top: 8px;
+  color: #969696;
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.greetings-right {
+  min-width: 66px;
+  padding-top: 7px;
+  color: #111111;
+  text-align: left;
+}
+
+.greeting-time,
+.greeting-date {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.greeting-date {
+  margin-top: 4px;
+}
+
+@media (max-width: 640px) {
+  .greetings {
+    padding-right: 18px;
+  }
+
+  .greeting-title {
+    font-size: 1.1rem;
+  }
+}
+.greeting-time {
+  font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: white;
+    font-family: 'Google Sans', sans-serif;
+    font-weight: bold;
+}
+.greeting-date {
+  font-size: 0.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: white;
+    font-family: 'Google Sans', sans-serif;
+    font-weight: bold;
+}
