@@ -1,0 +1,70 @@
+.order-list{
+    display: flex;
+    align-items: center;
+    gap: 6;
+    padding-top: 10px;
+  
+}
+.SH-Btn{
+    background: #fcc100;
+    padding: 3;
+    font-size: 20px;
+    line-height: 1.75rem;
+    font-weight: bold;
+    border-radius: 10px; ;   
+    width: 50px;
+    height: 50px;
+
+}
+.text{
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.name{
+    font-size: large;
+    color: white;
+    font-weight: 600;
+    
+}
+.items{
+    color: white;
+    font-size: small;
+
+}
+.Ready{
+   
+    color: green;
+    font-weight: 600;
+
+}
+.checkdouble-icon{
+    display: inline;
+    margin-right: 2;
+}
+.ready-container{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 2;
+}
+.paragraph-serve{
+    color: white;
+    font-size:small ;
+}
+.name-container{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 2;
+}
+.table-no{
+    color: #fcc100;
+    font-weight: 600;
+    border: #fcc100;
+    border-color: #fcc100;
+    border-radius: 8px;
+}

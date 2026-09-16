@@ -5,21 +5,35 @@
     height: calc(100vh - 5rem);
     overflow: hidden;
     gap: 1rem;
+    box-sizing: border-box;
+    align-items: flex-start;
+    width: 100%;
+    padding-left: 50px;
+  
+    
 }
 
 
 
 /*LEFT DIV */
-.left-div {
-    flex:3;
-  
-    }
+.left-div{
+  min-width: 0;
+  display: inline;
+}
 
 /*RIGHT DIV */
 .right-div {
- flex:2;
- background-color: blue;
+  display: flex;
+  align-items: flex-start;
 }
+.popular-dishes {
+  display: block;
+  width: 100%;
+  min-height: 22rem;
+  margin: 0;
+ 
+}
+
 
 .home-content{
     display: flex;
@@ -29,4 +43,9 @@
 }
 .home-content .mini-card{
     flex:1;
+}
+@media (max-width: 900px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
 }

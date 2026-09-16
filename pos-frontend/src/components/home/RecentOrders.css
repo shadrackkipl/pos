@@ -89,21 +89,37 @@
 .recent-orders-search-button:hover {
   background: rgba(79, 158, 247, 0.25);
 }
-.search-container {
+.search-contain {
   display: flex;
   align-items: center;
   gap: 4px;
+  height: 10px;
+  width: 810px;
+  box-sizing: border-box;
   background-color: #1f1f1f;
-  border-radius: 20px;
-  padding: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  width: min(500px, 42vw);
+  border-radius: 10px;
+  padding: 20px;
+  
 }
-.search-container input {
+.search-icon{
+  display: flex;
+  color: white;
+  
+
+}
+.search-contain input {
   flex: 1;
   border: none;
   background-color: transparent;
   color: #ffffff;
   outline: none;
+}
+.Order-list{
+  margin-top: 4;
+
+  overflow-y: scroll;
+  height: 300px;
+   scrollbar-width: none;
+
+
 }
