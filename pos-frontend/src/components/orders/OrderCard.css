@@ -1,0 +1,121 @@
+.order-card {
+  min-width: 0;
+  overflow: hidden;
+  color: #f4f4f4;
+  background: #252525;
+  border-radius: 6px;
+}
+
+.order-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 14px 0;
+}
+
+.order-card__identity,
+.order-card__status,
+.order-card__details,
+.order-card__total {
+  display: flex;
+  align-items: center;
+}
+
+.order-card__identity {
+  min-width: 0;
+  gap: 16px;
+}
+
+.order-card__avatar {
+  display: grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 44px;
+  place-items: center;
+  color: #171717;
+  background: #ffbd00;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.order-card__customer { min-width: 0; }
+.order-card__name,
+.order-card__table,
+.order-card__badge,
+.order-card__description,
+.order-card__details p { margin: 0; }
+
+.order-card__name {
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-card__table,
+.order-card__details,
+.order-card__description {
+  color: #a5a5a5;
+  font-size: 13px;
+}
+
+.order-card__table { margin-top: 5px; }
+
+.order-card__status {
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.order-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  color: #10ae5d;
+  background: rgba(16, 174, 93, 0.2);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.order-card__badge svg { font-size: 13px; }
+
+.order-card__description {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+}
+
+.order-card__description span {
+  width: 11px;
+  height: 11px;
+  background: #10ae5d;
+  border-radius: 50%;
+}
+
+.order-card__details {
+  justify-content: space-between;
+  margin: 17px 14px 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #5a5a5a;
+}
+
+.order-card__total {
+  justify-content: space-between;
+  padding: 16px 14px;
+  background: #292929;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .order-card__top { padding-inline: 12px; }
+  .order-card__details { margin-inline: 12px; }
+  .order-card__total { padding-inline: 12px; }
+  .order-card__description { font-size: 11px; }
+}

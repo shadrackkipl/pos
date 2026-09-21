@@ -5,29 +5,27 @@ import { MdTableBar } from "react-icons/md";
 import { CiCircleMore } from "react-icons/ci";
 import { BiSolidDish } from "react-icons/bi";
 import "./BottomNav.css";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const BottomNav = () => {
-  const navigate = useNavigate();
-
   return (
     <div className="bottom-nav">
-      <button onClick={() => navigate("/home")} className="nav-item active">
+      <NavLink to="/home" className="nav-item">
         <FaHome className="nav-icon" />
         Home
-      </button>
-      <button onClick={() => navigate("/orders")} className="nav-item">
+      </NavLink>
+      <NavLink to="/orders" className="nav-item">
         <MdOutlineReorder className="nav-orders" />
         Orders
-      </button>
-      <button className="nav-item nav-dish">
+      </NavLink>
+      <button type="button" className="nav-item nav-dish">
         <BiSolidDish />
       </button>
-      <button className="nav-item">
+      <NavLink to="/tables" className="nav-item">
         <MdTableBar className="nav-tables" />
         Tables
-      </button>
-      <button className="nav-item">
+      </NavLink>
+      <button type="button" className="nav-item">
         <CiCircleMore className="nav-more" />
         More
       </button>

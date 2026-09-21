@@ -1,0 +1,49 @@
+.table-card {
+	min-height: 161px;
+	padding: 14px 16px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background: #252525;
+}
+
+.table-card-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.table-card h2 {
+	margin: 0;
+	color: #f4f4f4;
+	font-size: 17px;
+	font-weight: 700;
+}
+
+.table-status {
+	padding: 6px 8px;
+	border-radius: 6px;
+	font-size: 13px;
+	line-height: 1;
+}
+
+.table-status.booked {
+	color: #08bd54;
+	background: rgba(37, 133, 91, 0.35);
+}
+
+.table-status.available {
+	color: #fff;
+	background: #765800;
+}
+
+.table-avatar {
+	display: grid;
+	width: 58px;
+	height: 58px;
+	margin: 24px auto 0;
+	place-items: center;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 16px;
+}
