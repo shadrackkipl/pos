@@ -2,7 +2,6 @@ import React from "react";
 import { FaCheckDouble } from "react-icons/fa";
 import "./OrderCard.css";
 
-
 const OrderCard = () => {
   return (
     <article className="order-card">
@@ -15,15 +14,24 @@ const OrderCard = () => {
           </div>
         </div>
         <div className="order-card__status">
-          <p className="order-card__badge"><FaCheckDouble />Ready</p>
-          <p className="order-card__description"><span />Ready to serve</p>
+          <p className="order-card__badge">
+            <FaCheckDouble />
+            Ready
+          </p>
+          <p className="order-card__description">
+            <span />
+            Ready to serve
+          </p>
         </div>
       </div>
       <div className="order-card__details">
-        <p>January 18, 2025 08:32 PM</p>
+        <p>September 18, 2026 08:32 PM</p>
         <p>8 Items</p>
       </div>
-      <div className="order-card__total"><strong>Total</strong><strong>250 Ksh</strong></div>
+      <div className="order-card__total">
+        <strong>Total</strong>
+        <strong>250 Ksh</strong>
+      </div>
     </article>
   );
 };

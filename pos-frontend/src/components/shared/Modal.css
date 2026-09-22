@@ -1,0 +1,233 @@
+.Modal-page {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(10, 10, 13, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.Modal-card {
+  width: min(100%, 460px);
+  background: linear-gradient(180deg, #1d1d1d 0%, #171717 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px 18px;
+  background: linear-gradient(135deg, rgba(98, 0, 255, 0.18), rgba(255, 194, 26, 0.08));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.title-h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f5f5f5;
+}
+
+.modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #f5f5f5;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.modal-btn:hover {
+  background: rgba(255, 194, 26, 0.12);
+  border-color: rgba(255, 194, 26, 0.35);
+  color: #ffc21a;
+}
+
+.children {
+  padding: 22px;
+  color: #ebebef;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b5b9c4;
+}
+
+.form-input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5f5f5;
+  font-size: 0.96rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #8b8f9a;
+}
+
+.form-input:focus {
+  outline: none; 
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.guest-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 54px;
+  padding: 8px 12px 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.guest-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.guest-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b5b9c4;
+}
+
+.guest-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f5f5f5;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stepper-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f5f5f5;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stepper-btn:hover {
+  background: #ffc21a;
+  color: #171717;
+}
+
+.stepper-count {
+  min-width: 54px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f5f5f5;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.primary-btn {
+  flex: 1;
+  min-height: 48px;
+  border: none;
+  border-radius: 14px;
+  background: yellow;
+  color: #000000;
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+
+}
+
+.secondary-btn {
+  flex: 1;
+  min-height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f5f5f5;
+  font-size: 0.96rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 194, 26, 0.08);
+  border-color: rgba(255, 194, 26, 0.25);
+  color: #ffc21a;
+}
+
+@media (max-width: 480px) {
+  .Modal-page {
+    padding: 14px;
+  }
+
+  .Modal-card {
+    border-radius: 20px;
+  }
+
+  .title,
+  .children {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+} 

@@ -47,12 +47,9 @@
 }
 
 .Orderscont button {
-  margin-left: 25px;
+
   padding: 11px 16px;
   border: 0;
-  border-radius: 6px;
-  background: transparent;
-  color: #a7a7a7;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
