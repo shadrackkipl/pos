@@ -1,11 +1,12 @@
 .menu-container {
-	--menu-surface: #171b22;
-	--menu-surface-raised: #202630;
-	--menu-border: rgba(255, 255, 255, 0.08);
-	--menu-muted: #8e98a8;
+	--menu-surface: #252525;
+	--menu-surface-raised: #2f2f2f;
+	--menu-border: rgba(255, 255, 255, 0.07);
+
 	width: 100%;
+	max-width: 1180px;
 	padding: 28px 0 42px;
-	color: #f7f8fa;
+	color: #f4f7fb;
 }
 
 .menu-container-header,
@@ -18,12 +19,12 @@
 }
 
 .menu-container-header {
-	margin-bottom: 18px;
+	margin-bottom: 22px;
 }
 
 .menu-eyebrow {
 	margin: 0 0 7px;
-	color: #8f9bad;
+	color: #a9a9a9;
 	font-size: 10px;
 	font-weight: 700;
 	letter-spacing: 0.14em;
@@ -33,7 +34,7 @@
 .menu-heading,
 .menu-section-heading h3 {
 	margin: 0;
-	color: #ffffff;
+	color: #f6f7f9;
 	letter-spacing: -0.03em;
 }
 
@@ -43,8 +44,9 @@
 }
 
 .menu-item-total {
+	white-space: nowrap;
 	padding: 8px 12px;
-	color: #b9c3d1;
+	color: #dfe5ec;
 	background: rgba(255, 255, 255, 0.06);
 	border: 1px solid var(--menu-border);
 	border-radius: 999px;
@@ -54,37 +56,44 @@
 
 .menu-categories {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 	gap: 12px;
-	margin-bottom: 32px;
+	margin-bottom: 34px;
 }
 
 .menu-category-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	min-height: 92px;
 	padding: 15px;
+	font: inherit;
 	color: #ffffff;
 	border: 2px solid transparent;
 	border-radius: 16px;
 	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 	cursor: pointer;
 	text-align: left;
-	transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+	overflow: hidden;
+	transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
 
 .menu-category-card:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.24);
+	filter: saturate(1.08);
 }
 
 .menu-category-card:focus-visible,
 .stepper-btn:focus-visible {
-	outline: 3px solid #72b7ff;
+	outline: 3px solid var(--menu-highlight);
 	outline-offset: 3px;
 }
 
 .menu-category-card.is-selected {
-	border-color: rgba(255, 255, 255, 0.92);
-	box-shadow: 0 0 0 3px rgba(114, 183, 255, 0.18), 0 12px 24px rgba(0, 0, 0, 0.24);
+	border-color: var(--menu-highlight);
+	
 }
 
 .menu-category-topline {
@@ -115,7 +124,7 @@
 
 .menu-section-heading {
 	gap: 18px;
-	margin-bottom: 16px;
+	margin-bottom: 18px;
 }
 
 .menu-section-heading h3 {
@@ -130,12 +139,12 @@
 
 .menu-items-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 	gap: 14px;
 }
 
 .menu-item-card {
-	min-height: 142px;
+	min-height: 158px;
 	padding: 18px;
 	display: flex;
 	flex-direction: column;
@@ -144,12 +153,14 @@
 	border: 1px solid var(--menu-border);
 	border-radius: 16px;
 	box-sizing: border-box;
-	transition: border-color 180ms ease, transform 180ms ease;
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+	transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
 .menu-item-card:hover {
-	border-color: rgba(114, 183, 255, 0.45);
+	border-color: rgba(255, 153, 0, 0.45);
 	transform: translateY(-2px);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 10px 22px rgba(0, 0, 0, 0.16);
 }
 
 .menu-item-info {
@@ -159,7 +170,7 @@
 }
 
 .menu-item-icon {
-	color: #f7f8fa;
+	color: #f4f7fb;
 	font-size: 15px;
 	font-weight: 700;
 }
@@ -176,14 +187,14 @@
 
 .menu-item-price {
 	margin: 0;
-	color: #ffffff;
+	color: #f6f7f9;
 	font-size: 17px;
 	font-weight: 700;
 }
 
 .menu-item-price span {
 	margin-right: 3px;
-	color: #72b7ff;
+	color: var(--menu-highlight);
 	font-size: 10px;
 	letter-spacing: 0.08em;
 }
@@ -193,7 +204,7 @@
 	align-items: center;
 	gap: 4px;
 	padding: 4px;
-	background: #11151b;
+	background: #1f1f1f;
 	border: 1px solid var(--menu-border);
 	border-radius: 10px;
 }
@@ -204,7 +215,7 @@
 	height: 25px;
 	padding: 0;
 	place-items: center;
-	color: #dce8f7;
+	color: #f4f7fb;
 	background: transparent;
 	border: 0;
 	border-radius: 6px;
@@ -216,7 +227,11 @@
 
 .stepper-btn:hover {
 	color: #ffffff;
-	background: #2d75b8;
+	background: var(--menu-action);
+}
+
+.stepper-btn:active {
+	transform: scale(0.94);
 }
 
 .stepper-count {
