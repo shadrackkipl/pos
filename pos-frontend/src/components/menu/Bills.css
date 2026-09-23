@@ -7,28 +7,30 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 7px 0;
-	color: #9ba4b0;
+	padding: 6px 0;
+	color: #81776a;
 	font-size: 11px;
 }
 
 .menu-bill-row strong {
-	color: #e2e8f0;
+	color: #40392f;
 	font-size: 11px;
 	font-weight: 600;
 }
 
 .menu-bill-row.total {
+	display: flex;
 	margin-top: 8px;
-	padding: 15px 0 16px;
-	color: #f8fafc;
-	border-top: 1px dashed rgba(255, 255, 255, 0.14);
+	padding: 13px 0 7px;
+	color: #302c26;
+	border-top: 1px dashed #c8bda9;
+	border-bottom: 3px double #c8bda9;
 }
 
 .menu-bill-panel {
-	margin-top: 74px;
-	padding: 13px 1px 0;
-	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	margin-top: 15px;
+	padding: 10px 0 0;
+	border-top: 0;
 }
 
 .menu-bill-panel .menu-section-heading {
@@ -36,19 +38,19 @@
 }
 
 .menu-bill-row.total {
-	display: none;
+	display: flex;
 }
 
 .menu-bill-row.total strong {
-	color: #93c5fd;
-	font-size: 18px;
+	color: #302c26;
+	font-size: 16px;
 	font-weight: 750;
 }
 
 .menu-payment-label {
-	display: none;
+	display: block;
 	margin: 0 0 8px;
-	color: #8f98a5;
+	color: #81776a;
 	font-size: 10px;
 	font-weight: 600;
 }
@@ -73,17 +75,17 @@
 }
 
 .payment-button {
-	color: #c2c2c2;
-	background: #202020;
-	border: 1px solid transparent;
+	color: #75634a;
+	background: #f3ede4;
+	border: 1px solid #ded1bd;
 }
 
 .payment-button.active,
 .payment-button:hover,
 .payment-button:focus-visible {
-	color: #e5e5e5;
-	background: #202020;
-	border-color: transparent;
+	color: #302c26;
+	background: #e9ddca;
+	border-color: #cdbb9f;
 }
 
 .menu-action-buttons {
@@ -98,9 +100,9 @@
 	align-items: center;
 	justify-content: center;
 	gap: 7px;
-	color: #ffffff;
-	background: #0668d6;
-	border: 1px solid #0668d6;
+	color: #fffdf8;
+	background: #5e5549;
+	border: 1px solid #5e5549;
 }
 
 .secondary-action svg {
@@ -108,21 +110,54 @@
 }
 
 .primary-action {
-	color: #171717;
-	background: #ffb400;
-	border: 1px solid #ffb400;
+	color: #fffdf8;
+	background: #9a7650;
+	border: 1px solid #9a7650;
 	box-shadow: none;
 }
 
 .primary-action:hover,
 .primary-action:focus-visible {
-	background: #ffc229;
+	background: #836343;
 	transform: translateY(-1px);
 }
 
 .secondary-action:hover,
 .secondary-action:focus-visible {
-	background: #0874ed;
+	background: #4b443b;
+}
+
+@media print {
+	.menu-right-panel {
+		width: 100%;
+		min-width: 0;
+		padding: 0;
+		background: #ffffff;
+		border: 0;
+		box-shadow: none;
+	}
+
+	.menu-order-panel {
+		max-width: 80mm;
+		margin: 0 auto;
+		padding: 8mm 6mm;
+		box-shadow: none;
+		background: #ffffff;
+	}
+
+	.menu-page,
+	.menu-left-panel,
+	.menu-order-content {
+		height: auto;
+		overflow: visible;
+	}
+
+	.menu-left-panel,
+	.menu-title,
+	.menu-payment-options,
+	.menu-action-buttons {
+		display: none;
+	}
 }
 
 .payment-button:focus-visible,

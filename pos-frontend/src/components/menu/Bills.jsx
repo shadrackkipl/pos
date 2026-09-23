@@ -14,11 +14,11 @@ const Bill = () => {
       </div>
       <div className="menu-bill-row">
         <span>Items</span>
-        <strong>₹240</strong>
+        <strong>KES 240</strong>
       </div>
       <div className="menu-bill-row">
         <span>Tax (5.25%)</span>
-        <strong>₹24</strong>
+        <strong>KES 24</strong>
       </div>
       <div className="menu-bill-row total">
         <span>Total</span>

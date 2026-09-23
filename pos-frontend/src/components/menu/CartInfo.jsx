@@ -36,7 +36,7 @@ const Cartinfo = () => {
           >
             <FiTrash2 />
           </button>
-          <strong>KES 2,500</strong>
+          <p className="kes">KES 2,500</p>
         </div>
       </div>
     </div>

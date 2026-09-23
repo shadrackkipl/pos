@@ -43,7 +43,7 @@ const Menu = () => {
         <div className="menu-order-panel">
           <div className="menu-order-header">
             <div className="menu-order-meta">
-              <h2>Customer Name</h2>
+              <h2>RESTRO</h2>
               <p>#101 / Dine</p>
               <p>January 19, 2025 05:34 PM</p>
             </div>
