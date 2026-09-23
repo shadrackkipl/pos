@@ -1,0 +1,98 @@
+.menu-cart-header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 12px;
+}
+
+.menu-cart-panel {
+	padding: 0;
+	background: transparent;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.menu-cart-header h3 {
+	margin: 0 0 11px;
+	color: #e5e5e5;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.menu-cart-header .menu-item-count {
+	display: none;
+}
+
+.menu-cart-item {
+	display: grid;
+	 grid-template-columns: minmax(0, 1fr) auto;
+		align-items: start;
+		min-height: 82px;
+		margin-bottom: 6px;
+		padding: 15px 13px 10px;
+		box-sizing: border-box;
+		background: #202020;
+		border-radius: 6px;
+}
+
+.menu-cart-copy {
+	min-width: 0;
+}
+
+.menu-cart-copy h4 {
+	margin: 0;
+	overflow: hidden;
+	color: #bdbdbd;
+	font-size: 14px;
+	font-weight: 650;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.menu-cart-controls {
+	position: absolute;
+	left: 13px;
+	bottom: 10px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.menu-cart-controls button,
+.menu-cart-remove {
+	display: grid;
+	place-items: center;
+	width: 18px;
+	height: 18px;
+	padding: 0;
+	color: #c6c6c6;
+	background: transparent;
+	border: 0;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.menu-cart-controls button:hover,
+.menu-cart-controls button:focus-visible {
+	color: #ffffff;
+	background: #383838;
+}
+
+.menu-cart-controls svg {
+	font-size: 14px;
+}
+
+.menu-cart-quantity {
+	color: #9c9c9c;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.menu-cart-item > strong {
+	grid-column: 1 / -1;
+	justify-self: end;
+	margin-top: -2px;
+	color: #e7e7e7;
+	font-size: 13px;
+}

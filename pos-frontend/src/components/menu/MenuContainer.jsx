@@ -2,6 +2,7 @@ import React from "react";
 import { menus } from "../../constants";
 import { GrRadialSelected } from "react-icons/gr";
 import "./MenuContainer.css";
+import { FaShoppingCart } from "react-icons/fa";
 
 import { useState } from "react";
 
@@ -78,9 +79,20 @@ const MenuContainer = () => {
           return (
             <article className="menu-item-card" key={menu.id}>
               <div className="menu-item-info">
-                <span className="menu-item-icon" aria-hidden="true">
-                  {menu.icon} {menu.name}
-                </span>
+                <div className="menu-item-topline">
+                  <span className="menu-item-icon" aria-hidden="true">
+                    {menu.icon} {menu.name}
+                  </span>
+                  <button
+                    type="button"
+                    className="cart-button"
+                    aria-label={`Add ${menu.name} to cart`}
+                    title={`Add ${menu.name} to cart`}
+                    onClick={() => increment(menu.id)}
+                  >
+                    <FaShoppingCart aria-hidden="true" />
+                  </button>
+                </div>
                 <span className="menu-item-category">
                   {menu.category || "Chef's choice"}
                 </span>
