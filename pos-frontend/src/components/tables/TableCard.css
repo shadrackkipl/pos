@@ -6,6 +6,16 @@
 	background: #252525;
 }
 
+.table-card.clickable {
+	cursor: pointer;
+}
+
+.table-card.clickable:hover,
+.table-card.clickable:focus-visible {
+	outline: 2px solid #d1ce08;
+	outline-offset: 2px;
+}
+
 .table-card-header {
 	display: flex;
 	align-items: center;

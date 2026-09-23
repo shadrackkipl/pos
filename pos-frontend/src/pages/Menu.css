@@ -1,0 +1,145 @@
+.menu-page {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 57px);
+  background: #1d1d1f;
+  overflow: hidden;
+}
+
+.menu-left-panel {
+  flex: 1 1 auto;
+  min-width: 0;
+  background: #1d1d1f;
+  padding: 28px 30px 24px;
+  box-sizing: border-box;
+}
+
+.menu-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menu-back {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  color: #ffffff;
+  background: #0a7ae8;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.menu-back svg {
+  font-size: 15px;
+}
+
+.menuh1 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.menu-right-panel {
+  position: relative;
+  width: 26vw;
+  min-width: 260px;
+  max-width: 400px;
+  min-height: 100%;
+  background: #4d9af5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 18px 14px 0;
+  box-sizing: border-box;
+}
+
+.menu-category {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0;
+  cursor: default;
+}
+
+.menu-category.active {
+  color: rgba(255, 255, 255, 0.95);
+  align-items: center;
+  margin-left: 850px;
+}
+
+@media (max-width: 640px) {
+  .menu-page {
+    min-height: calc(100vh - 57px);
+  }
+
+  .menu-left-panel {
+    padding: 22px 18px 20px;
+  }
+
+  .menu-right-panel {
+    width: 36vw;
+    min-width: 120px;
+    padding-top: 16px;
+  }
+
+  .menu-back {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menuh1 {
+    font-size: 18px;
+  }
+}
+
+.customer-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 190px;
+  justify-content: flex-end;
+  margin-left: 650px;
+}
+.customer-icon-container {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #f3f3f3;
+}
+.menu-icon{
+  color: #282828;
+  font-size: 1.65rem;
+}
+.customer-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  line-height: 1.1;
+}
+.customer-name {
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.Table-No {
+  color: #a9a9a9;
+  font-size: 0.65rem;
+  font-weight: 500;
+}

@@ -27,7 +27,6 @@ const tables = [
   ["Table 18", "Booked", "FM", "#0869d1"],
   ["Table 19", "Booked", "XM", "#0869d1"],
   ["Table 20", "Booked", "PW", "#0869d1"],
-
 ];
 
 const Tables = () => {
@@ -40,9 +39,8 @@ const Tables = () => {
       : tables.filter(([, status]) => status === filter);
 
   return (
-    
     <div className="tables-page">
-        <Header />
+      <Header />
       <section className="tables-container">
         <div className="tables-cont">
           <div className="tables-title">
@@ -81,6 +79,9 @@ const Tables = () => {
               status={status}
               initials={initials}
               color={color}
+              onClick={
+                status === "Available" ? () => navigate("/menu") : undefined
+              }
             />
           ))}
         </div>

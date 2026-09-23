@@ -66,15 +66,14 @@ const BottomNav = () => {
             <input
               className="form-input"
               type="tel"
-              placeholder="Enter customer phone"
+              placeholder="+254 712345678"
             />
           </div>
 
           <div className="form-field">
             <label className="form-label">Guest Count</label>
             <div className="guest-box">
-              <div className="guest-meta">
-                <span className="guest-label">Party size</span>
+              <div className="guest-meta">                
                 <span className="guest-value">{guestCount} Guest{guestCount === 1 ? "" : "s"}</span>
               </div>
 
