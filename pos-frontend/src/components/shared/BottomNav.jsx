@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { FaHome } from "react-icons/fa";
 import { MdOutlineReorder } from "react-icons/md";
 import { MdTableBar } from "react-icons/md";
@@ -7,6 +8,7 @@ import { BiSolidDish } from "react-icons/bi";
 import "./BottomNav.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import Modal from "./Modal.jsx";
+import { setCustomer } from "../../redux/slice/CustomerSlice.js";
 
 const BottomNav = () => {
   const navigate = useNavigate();
@@ -14,6 +16,9 @@ const BottomNav = () => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
   const [guestCount, setGuestCount] = useState(0);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const dispatch = useDispatch();
 
   const increment = () => {
     if (guestCount >= 6) return;
@@ -26,6 +31,7 @@ const BottomNav = () => {
 
   const handleCreateOrder = () => {
     closeModal();
+    dispatch(setCustomer({ name, phone, guests: guestCount }));
     navigate("/tables");
   };
 
@@ -55,6 +61,8 @@ const BottomNav = () => {
           <div className="form-field">
             <label className="form-label">Customer Name</label>
             <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="form-input"
               type="text"
               placeholder="Enter customer name"
@@ -64,6 +72,8 @@ const BottomNav = () => {
           <div className="form-field">
             <label className="form-label">Customer Phone</label>
             <input
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="form-input"
               type="tel"
               placeholder="+254 712345678"
@@ -73,16 +83,28 @@ const BottomNav = () => {
           <div className="form-field">
             <label className="form-label">Guest Count</label>
             <div className="guest-box">
-              <div className="guest-meta">                
-                <span className="guest-value">{guestCount} Guest{guestCount === 1 ? "" : "s"}</span>
+              <div className="guest-meta">
+                <span className="guest-value">
+                  {guestCount} Guest{guestCount === 1 ? "" : "s"}
+                </span>
               </div>
 
               <div className="stepper">
-                <button type="button" className="stepper-btn" onClick={decrement} aria-label="Decrease guest count">
+                <button
+                  type="button"
+                  className="stepper-btn"
+                  onClick={decrement}
+                  aria-label="Decrease guest count"
+                >
                   −
                 </button>
                 <span className="stepper-count">{guestCount}</span>
-                <button type="button" className="stepper-btn" onClick={increment} aria-label="Increase guest count">
+                <button
+                  type="button"
+                  className="stepper-btn"
+                  onClick={increment}
+                  aria-label="Increase guest count"
+                >
                   +
                 </button>
               </div>
@@ -90,10 +112,18 @@ const BottomNav = () => {
           </div>
 
           <div className="modal-actions">
-            <button type="button" className="secondary-btn" onClick={closeModal}>
+            <button
+              type="button"
+              className="secondary-btn"
+              onClick={closeModal}
+            >
               Cancel
             </button>
-            <button type="button" className="primary-btn" onClick={handleCreateOrder}>
+            <button
+              type="button"
+              className="primary-btn"
+              onClick={handleCreateOrder}
+            >
               Create Order
             </button>
           </div>

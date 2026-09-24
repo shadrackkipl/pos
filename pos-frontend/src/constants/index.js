@@ -49,61 +49,46 @@ export const popularDishes = [
 ];
 
 
-export const tables = [
-    { id: 1, name: "Table 1", status: "Booked", initial: "AM", seats: 4 },
-    { id: 2, name: "Table 2", status: "Available", initial: "MB", seats: 6 },
-    { id: 3, name: "Table 3", status: "Booked", initial: "JS", seats: 2 },
-    { id: 4, name: "Table 4", status: "Available", initial: "HR", seats: 4 },
-    { id: 5, name: "Table 5", status: "Booked", initial: "PL", seats: 3 },
-    { id: 6, name: "Table 6", status: "Available", initial: "RT", seats: 4 },
-    { id: 7, name: "Table 7", status: "Booked", initial: "LC", seats: 5 },
-    { id: 8, name: "Table 8", status: "Available", initial: "DP", seats: 5 },
-    { id: 9, name: "Table 9", status: "Booked", initial: "NK", seats: 6 },
-    { id: 10, name: "Table 10", status: "Available", initial: "SB", seats: 6 },
-    { id: 11, name: "Table 11", status: "Booked", initial: "GT", seats: 4 },
-    { id: 12, name: "Table 12", status: "Available", initial: "JS", seats: 6 },
-    { id: 13, name: "Table 13", status: "Booked", initial: "EK", seats: 2 },
-    { id: 14, name: "Table 14", status: "Available", initial: "QN", seats: 6 },
-    { id: 15, name: "Table 15", status: "Booked", initial: "TW", seats: 3 }
-  ];
+
   
 export const startersItem = [
     {
       id: 1,
-      name: "Paneer Tikka",
-      price: 250,
-      category: "Vegetarian"
-    },
-    {
-      id: 2,
-      name: "Chicken Tikka",
-      price: 300,
+      name: "Butter nuts and Ginger Soup",
+      price: 590,
       category: "Non-Vegetarian"
     },
     {
+      id: 2,
+      name: "Moroccan Harira",
+      price: 590,
+      category: "Vegetarian"
+    },
+    {
       id: 3,
-      name: "Tandoori Chicken",
-      price: 350,
+      name: "Masala Chips",
+      price: 590,
       category: "Non-Vegetarian"
     },
     {
       id: 4,
-      name: "Samosa",
-      price: 100,
-      category: "Vegetarian"
+      name: "Beef Samosa (2pcs)",
+      price: 490,
+      category: "Non-Vegetarian"
     },
     {
       id: 5,
-      name: "Aloo Tikki",
-      price: 120,
-      category: "Vegetarian"
+      name: "Chicken Wings",
+      price: 1990,
+      category: "Non-Vegetarian"
     },
     {
       id: 6,
-      name: "Hara Bhara Kebab",
-      price: 220,
-      category: "Vegetarian"
+      name: "Home Fries",
+      price: 590,
+      category: "Non-Vegetarian"
     }
+
   ];
   
 export const mainCourse = [
@@ -115,32 +100,32 @@ export const mainCourse = [
   },
   {
     id: 2,
-    name: "Paneer Butter Masala",
-    price: 350,
+    name: "Silk Route Chicken Noodles",
+    price: 1590,
     category: "Vegetarian"
   },
   {
     id: 3,
-    name: "Chicken Biryani",
-    price: 450,
+    name: "Seasoned Chips & Sausage",
+    price: 690,
     category: "Non-Vegetarian"
   },
   {
     id: 4,
-    name: "Dal Makhani",
-    price: 180,
+    name: "Grilled Salmon",
+    price: 2990,
     category: "Vegetarian"
   },
   {
     id: 5,
-    name: "Kadai Paneer",
-    price: 300,
-    category: "Vegetarian"
+    name: "Roast Half Chicken",
+    price: 1690,
+    category: "Non-Vegetarian"
   },
   {
     id: 6,
-    name: "Rogan Josh",
-    price: 500,
+    name: "Butter Chicken Curry",
+    price: 1490,
     category: "Non-Vegetarian"
   }
 ];
@@ -148,38 +133,38 @@ export const mainCourse = [
 export const beverages = [
   {
     id: 1,
-    name: "Masala Chai",
-    price: 50,
+    name: "Persian Tea",
+    price: 390,
     category: "Hot"
   },
   {
     id: 2,
-    name: "Lemon Soda",
-    price: 80,
-    category: "Cold"
+    name: "Hot Choclate",
+    price: 350,
+    category: "Hot"
   },
   {
     id: 3,
-    name: "Mango Lassi",
-    price: 120,
-    category: "Cold"
+    name: "Kenyan Tea",
+    price: 290,
+    category: "Hot"
   },
   {
     id: 4,
-    name: "Cold Coffee",
-    price: 150,
+    name: "Iced Americano",
+    price: 390,
     category: "Cold"
   },
   {
     id: 5,
-    name: "Fresh Lime Water",
-    price: 60,
+    name: "Iced Vanilla Latte",
+    price: 490,
     category: "Cold"
   },
   {
     id: 6,
     name: "Iced Tea",
-    price: 100,
+    price: 390,
     category: "Cold"
   }
 ];
@@ -187,39 +172,39 @@ export const beverages = [
 export const soups = [
   {
     id: 1,
-    name: "Tomato Soup",
-    price: 120,
-    category: "Vegetarian"
+    name: "Date Night Milkshake",
+    price: 690,
+    
   },
   {
     id: 2,
-    name: "Sweet Corn Soup",
-    price: 130,
-    category: "Vegetarian"
+    name: "Nairobi Afterglow Smoothie",
+    price: 590,
+  
   },
   {
     id: 3,
-    name: "Hot & Sour Soup",
-    price: 140,
-    category: "Vegetarian"
+    name: "Iced Strawberry Matcha Milkshake",
+    price: 650,
+   
   },
   {
     id: 4,
-    name: "Chicken Clear Soup",
-    price: 160,
-    category: "Non-Vegetarian"
+    name: "Mixed Berry Milkshake",
+    price: 550,
+    
   },
   {
     id: 5,
-    name: "Mushroom Soup",
-    price: 150,
-    category: "Vegetarian"
+    name: "Cappuccino Shake",
+    price: 550,
+   
   },
   {
     id: 6,
-    name: "Lemon Coriander Soup",
-    price: 110,
-    category: "Vegetarian"
+    name: "Green Power Smoothie",
+    price: 550,
+    
   }
 ];
 
@@ -348,7 +333,7 @@ export const menus = [
   { id: 1, name: "Starters", bgColor: "#b73e3e" ,icon: "🍲", items: startersItem },
   { id: 2, name: "Main Course", bgColor: "#5b45b0" ,icon: "🍛", items: mainCourse },
   { id: 3, name: "Beverages", bgColor: "#7f167f" ,icon: "🍹", items: beverages },
-  { id: 4, name: "Soups", bgColor: "#735f32" ,icon: "🍜", items: soups },
+  { id: 4, name: "Milkshakes & smoothies", bgColor: "#735f32" ,icon: "🍜", items: soups },
   { id: 5, name: "Desserts", bgColor: "#1d2569" ,icon: "🍰", items: desserts },
   { id: 6, name: "Pizzas", bgColor: "#285430" ,icon: "🍕", items: pizzas },
   { id: 7, name: "Alcoholic Drinks", bgColor: "#b73e3e" ,icon: "🍺", items: alcoholicDrinks },
@@ -406,4 +391,24 @@ export const orders = [
     tableNo: 6,
     total: 220.0,
   },
+
+
+ 
 ];
+
+
+export const getBgColor = () => {
+  const bgarr = [
+    "#b73e3e",
+    "#5b45b0",
+    "#735f32",
+    "#1d2569",
+    "#285430",
+    "#f6b100",
+    "#025cca",
+    "#be3e3f",
+    "#02ca3a",
+  ];
+
+  return bgarr[Math.floor(Math.random() * bgarr.length)];
+};

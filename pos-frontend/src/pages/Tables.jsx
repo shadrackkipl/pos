@@ -6,37 +6,46 @@ import "./Tables.css";
 import TableCard from "../components/tables/TableCard";
 import BottomNav from "../components/shared/BottomNav";
 import Header from "../components/shared/Header";
+import { getBgColor } from "../constants";
 
 const tables = [
-  ["Table 1", "Booked", "SH", "#ffb400"],
-  ["Table 2", "Available", "MB", "#00c83c"],
-  ["Table 3", "Booked", "JS", "#00c83c"],
-  ["Table 4", "Available", "HR", "#c83b41"],
-  ["Table 5", "Booked", "PL", "#ffb400"],
-  ["Table 6", "Available", "RT", "#00c83c"],
-  ["Table 7", "Booked", "LC", "#c83b41"],
-  ["Table 8", "Available", "DP", "#c83b41"],
-  ["Table 9", "Booked", "NK", "#c83b41"],
-  ["Table 10", "Available", "SB", "#ffb400"],
-  ["Table 11", "Booked", "GT", "#0869d1"],
-  ["Table 12", "Available", "JS", "#0869d1"],
-  ["Table 13", "Booked", "EK", "#c83b41"],
-  ["Table 14", "Available", "QN", "#0869d1"],
-  ["Table 16", "Booked", "DW", "#0869d1"],
-  ["Table 17", "Booked", "MN", "#0869d1"],
-  ["Table 18", "Booked", "FM", "#0869d1"],
-  ["Table 19", "Booked", "XM", "#0869d1"],
-  ["Table 20", "Booked", "PW", "#0869d1"],
+  ["Table 1", "Booked", "SH"],
+  ["Table 2", "Available", "MB"],
+  ["Table 3", "Booked", "JS"],
+  ["Table 4", "Available", "HR"],
+  ["Table 5", "Booked", "PL"],
+  ["Table 6", "Available", "RT"],
+  ["Table 7", "Booked", "LC"],
+  ["Table 8", "Available", "DP"],
+  ["Table 9", "Booked", "NK"],
+  ["Table 10", "Available", "SB"],
+  ["Table 11", "Booked", "GT"],
+  ["Table 12", "Available", "JS"],
+  ["Table 13", "Booked", "EK"],
+  ["Table 14", "Available", "QN"],
+  ["Table 16", "Booked", "DW"],
+  ["Table 17", "Booked", "MN"],
+  ["Table 18", "Booked", "FM"],
+  ["Table 19", "Booked", "XM"],
+  ["Table 20", "Booked", "PW"],
 ];
 
 const Tables = () => {
   const navigate = useNavigate();
   const [filter, setFilter] = useState("All");
+  const [tablesWithColors] = useState(() =>
+    tables.map(([name, status, initials]) => ({
+      name,
+      status,
+      initials,
+      color: getBgColor(),
+    })),
+  );
 
   const visibleTables =
     filter === "All"
-      ? tables
-      : tables.filter(([, status]) => status === filter);
+      ? tablesWithColors
+      : tablesWithColors.filter(({ status }) => status === filter);
 
   return (
     <div className="tables-page">
@@ -72,7 +81,7 @@ const Tables = () => {
           </div>
         </div>
         <div className="tables-grid">
-          {visibleTables.map(([name, status, initials, color]) => (
+          {visibleTables.map(({ name, status, initials, color }) => (
             <TableCard
               key={name}
               name={name}

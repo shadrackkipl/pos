@@ -7,29 +7,29 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 6px 0;
-	color: #81776a;
+	padding: 4px 0;
+	color: #555555;
 	font-size: 11px;
 }
 
 .menu-bill-row strong {
-	color: #40392f;
+	color: #000000;
 	font-size: 11px;
 	font-weight: 600;
 }
 
 .menu-bill-row.total {
 	display: flex;
-	margin-top: 8px;
-	padding: 13px 0 7px;
-	color: #302c26;
-	border-top: 1px dashed #c8bda9;
-	border-bottom: 3px double #c8bda9;
+	margin-top: 5px;
+	padding: 8px 0 5px;
+	color: #000000;
+	border-top: 1px dashed #000000;
+	border-bottom: 3px double #000000;
 }
 
 .menu-bill-panel {
-	margin-top: 15px;
-	padding: 10px 0 0;
+	margin-top: 9px;
+	padding: 6px 0 0;
 	border-top: 0;
 }
 
@@ -42,15 +42,15 @@
 }
 
 .menu-bill-row.total strong {
-	color: #302c26;
+	color: #000000;
 	font-size: 16px;
 	font-weight: 750;
 }
 
 .menu-payment-label {
 	display: block;
-	margin: 0 0 8px;
-	color: #81776a;
+	margin: 0 0 5px;
+	color: #555555;
 	font-size: 10px;
 	font-weight: 600;
 }
@@ -64,7 +64,7 @@
 .payment-button,
 .secondary-action,
 .primary-action {
-	min-height: 38px;
+	min-height: 32px;
 	padding: 0 12px;
 	border-radius: 9px;
 	font-family: inherit;
@@ -75,24 +75,24 @@
 }
 
 .payment-button {
-	color: #75634a;
-	background: #f3ede4;
-	border: 1px solid #ded1bd;
+	color: #000000;
+	background: #ffffff;
+	border: 1px solid #000000;
 }
 
 .payment-button.active,
 .payment-button:hover,
 .payment-button:focus-visible {
-	color: #302c26;
-	background: #e9ddca;
-	border-color: #cdbb9f;
+	color: #ffffff;
+	background: #0a7ae8;
+	border-color: #0a7ae8;
 }
 
 .menu-action-buttons {
 	display: grid;
 	grid-template-columns: 1fr 1.25fr;
 	gap: 8px;
-	margin-top: 16px;
+	margin-top: 9px;
 }
 
 .secondary-action {
@@ -101,8 +101,8 @@
 	justify-content: center;
 	gap: 7px;
 	color: #fffdf8;
-	background: #5e5549;
-	border: 1px solid #5e5549;
+	background: #000000;
+	border: 1px solid #000000;
 }
 
 .secondary-action svg {
@@ -111,26 +111,38 @@
 
 .primary-action {
 	color: #fffdf8;
-	background: #9a7650;
-	border: 1px solid #9a7650;
+	background: #0a7ae8;
+	border: 1px solid #0a7ae8;
 	box-shadow: none;
 }
 
 .primary-action:hover,
 .primary-action:focus-visible {
-	background: #836343;
+	background: #075aa8;
 	transform: translateY(-1px);
 }
 
 .secondary-action:hover,
 .secondary-action:focus-visible {
-	background: #4b443b;
+	background: #222222;
 }
 
 @media print {
+	body {
+		background: #ffffff;
+	}
+
+	.menu-page {
+		width: 100%;
+		height: auto;
+		min-height: 0;
+		background: #ffffff;
+	}
+
 	.menu-right-panel {
 		width: 100%;
 		min-width: 0;
+		height: auto;
 		padding: 0;
 		background: #ffffff;
 		border: 0;
@@ -140,7 +152,10 @@
 	.menu-order-panel {
 		max-width: 80mm;
 		margin: 0 auto;
-		padding: 8mm 6mm;
+		height: auto;
+		padding: 5mm 4mm;
+		border: 0;
+		border-radius: 0;
 		box-shadow: none;
 		background: #ffffff;
 	}
@@ -155,8 +170,40 @@
 	.menu-left-panel,
 	.menu-title,
 	.menu-payment-options,
-	.menu-action-buttons {
+	.menu-action-buttons,
+	.menu-cart-controls,
+	.menu-cart-remove {
 		display: none;
+	}
+
+	.menu-order-status {
+		color: #000000;
+		background: #ffffff;
+		border-color: #000000;
+	}
+
+	.menu-order-status::before {
+		background: #000000;
+	}
+
+	.menu-order-panel,
+	.menu-order-panel * {
+		color: #000000;
+		background-color: transparent;
+		border-color: #000000;
+		box-shadow: none;
+	}
+
+	.menu-order-panel {
+		background: #ffffff;
+	}
+
+	.menu-customer-panel {
+		background: #ffffff;
+	}
+
+	.menu-order-panel::after {
+		background: linear-gradient(135deg, transparent 5px, #ffffff 0) 0 0 / 12px 7px repeat-x;
 	}
 }
 

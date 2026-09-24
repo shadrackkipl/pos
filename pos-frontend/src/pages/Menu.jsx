@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BottomNav from "../components/shared/BottomNav";
 import "./Menu.css";
 import { FaArrowLeft } from "react-icons/fa";
@@ -8,9 +8,15 @@ import MenuContainer from "../components/menu/MenuContainer";
 
 import Cartinfo from "../components/menu/Cartinfo";
 import Bills from "../components/menu/Bills";
+import CustomerInfo from "../components/menu/CustomerInfo";
+import { useSelector } from "react-redux";
+import { formatDate } from "../utils";
+
 
 const Menu = () => {
   const navigate = useNavigate();
+  const customerData = useSelector((state) => state.customer);
+  const [dateTime, setDateTime] = useState(new Date());
 
   return (
     <section className="menu-page">
@@ -31,8 +37,8 @@ const Menu = () => {
               <MdRestaurantMenu className="menu-icon" />
             </div>
             <div className="customer-copy">
-              <span className="customer-name">Customer Name</span>
-              <span className="Table-No">Table No: 2</span>
+              <span className="customer-name">{customerData.customerName}</span>
+              <span className="Table-No">{customerData.tableNo}</span>
             </div>
           </div>
         </div>
@@ -43,18 +49,22 @@ const Menu = () => {
         <div className="menu-order-panel">
           <div className="menu-order-header">
             <div className="menu-order-meta">
+              <span className="menu-order-kicker">ORDER SUMMARY</span>
               <h2>RESTRO</h2>
-              <p>#101 / Dine</p>
-              <p>January 19, 2025 05:34 PM</p>
+              <p className="menu-order-number">
+                Order #101 <span>•</span> Dine in
+              </p>
+              <p>
+                {formatDate(dateTime)},  <span>•</span> {setDateTime}
+              </p>
             </div>
-            <button className="menu-order-avatar" type="button">
-              CN
-            </button>
+            <span className="menu-order-status">OPEN</span>
           </div>
 
           <div className="menu-order-divider" />
 
           <div className="menu-order-content">
+            <CustomerInfo />
             <Cartinfo />
             <Bills />
           </div>

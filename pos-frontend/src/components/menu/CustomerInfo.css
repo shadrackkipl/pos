@@ -1,12 +1,12 @@
 .menu-customer-panel,
 .menu-bill-panel,
 .menu-cart-panel {
-	padding: 17px;
-	color: #f8fafc;
-	background: #2c3035;
-	border: 1px solid rgba(255, 255, 255, 0.07);
-	border-radius: 16px;
-	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+	padding: 15px;
+	color: #000000;
+	background: #ffffff;
+	border: 1px solid #000000;
+	border-radius: 13px;
+	box-shadow: none;
 }
 
 .menu-section-heading {
@@ -14,19 +14,19 @@
 	align-items: flex-start;
 	justify-content: space-between;
 	gap: 12px;
-	margin-bottom: 16px;
+	margin-bottom: 10px;
 }
 
 .menu-section-heading h3 {
 	margin: 4px 0 0;
-	color: #f8fafc;
+	color: #000000;
 	font-size: 14px;
 	font-weight: 700;
 }
 
 .menu-section-eyebrow {
 	display: block;
-	color: #7f8b9a;
+	color: #555555;
 	font-size: 9px;
 	font-weight: 800;
 	letter-spacing: 0.13em;
@@ -35,8 +35,9 @@
 .menu-status-badge,
 .menu-item-count {
 	padding: 5px 8px;
-	color: #93c5fd;
-	background: rgba(37, 99, 235, 0.16);
+	color: #000000;
+	background: #ffffff;
+	border: 1px solid #000000;
 	border-radius: 6px;
 	font-size: 10px;
 	font-weight: 700;
@@ -47,25 +48,25 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 12px;
-	padding: 11px 0;
-	border-top: 1px solid rgba(255, 255, 255, 0.07);
+	padding: 7px 0;
+	border-top: 1px solid #000000;
 }
 
 .menu-customer-row span {
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	color: #8f98a5;
+	color: #555555;
 	font-size: 11px;
 }
 
 .menu-customer-row span svg {
-	color: #93c5fd;
+	color: #000000;
 	font-size: 14px;
 }
 
 .menu-customer-row strong {
-	color: #e7ebf0;
+	color: #000000;
 	font-size: 11px;
 	font-weight: 600;
 }
