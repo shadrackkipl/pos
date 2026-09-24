@@ -1,72 +1,69 @@
 .menu-customer-panel,
 .menu-bill-panel,
 .menu-cart-panel {
-	padding: 15px;
-	color: #000000;
-	background: #ffffff;
-	border: 1px solid #000000;
-	border-radius: 13px;
-	box-shadow: none;
+  padding: 15px 0;
+  color: #ffffff;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 .menu-section-heading {
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	gap: 12px;
-	margin-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
 }
 
 .menu-section-heading h3 {
-	margin: 4px 0 0;
-	color: #000000;
-	font-size: 14px;
-	font-weight: 700;
+  margin: 4px 0 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .menu-section-eyebrow {
-	display: block;
-	color: #555555;
-	font-size: 9px;
-	font-weight: 800;
-	letter-spacing: 0.13em;
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
 }
 
 .menu-status-badge,
 .menu-item-count {
-	padding: 5px 8px;
-	color: #000000;
-	background: #ffffff;
-	border: 1px solid #000000;
-	border-radius: 6px;
-	font-size: 10px;
-	font-weight: 700;
+  padding: 5px 8px;
+  color: #121315;
+  background: #f5f6f7;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .menu-customer-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 12px;
-	padding: 7px 0;
-	border-top: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .menu-customer-row span {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	color: #555555;
-	font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 11px;
 }
 
 .menu-customer-row span svg {
-	color: #000000;
-	font-size: 14px;
+  color: #ffffff;
+  font-size: 14px;
 }
 
 .menu-customer-row strong {
-	color: #000000;
-	font-size: 11px;
-	font-weight: 600;
-}
+  color: #ffffff;

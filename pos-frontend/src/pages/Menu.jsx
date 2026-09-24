@@ -6,17 +6,16 @@ import { useNavigate } from "react-router-dom";
 import { MdRestaurantMenu } from "react-icons/md";
 import MenuContainer from "../components/menu/MenuContainer";
 
-import Cartinfo from "../components/menu/Cartinfo";
+import CartInfo from "../components/menu/CartInfo";
 import Bills from "../components/menu/Bills";
 import CustomerInfo from "../components/menu/CustomerInfo";
 import { useSelector } from "react-redux";
 import { formatDate } from "../utils";
 
-
 const Menu = () => {
   const navigate = useNavigate();
   const customerData = useSelector((state) => state.customer);
-  const [dateTime, setDateTime] = useState(new Date());
+  const [dateTime] = useState(new Date());
 
   return (
     <section className="menu-page">
@@ -31,7 +30,6 @@ const Menu = () => {
             <FaArrowLeft />
           </button>
           <h1 className="menuh1">Menu</h1>
-          {/*LOGGED USER DETAILS*/}
           <div className="customer-details">
             <div className="customer-icon-container" aria-hidden="true">
               <MdRestaurantMenu className="menu-icon" />
@@ -55,7 +53,11 @@ const Menu = () => {
                 Order #101 <span>•</span> Dine in
               </p>
               <p>
-                {formatDate(dateTime)},  <span>•</span> {setDateTime}
+                {formatDate(dateTime)} <span>•</span>{" "}
+                {dateTime.toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
               </p>
             </div>
             <span className="menu-order-status">OPEN</span>
@@ -65,7 +67,7 @@ const Menu = () => {
 
           <div className="menu-order-content">
             <CustomerInfo />
-            <Cartinfo />
+            <CartInfo />
             <Bills />
           </div>
         </div>

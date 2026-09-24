@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { menus } from "../../constants";
 import { GrRadialSelected } from "react-icons/gr";
 import "./MenuContainer.css";
 import { FaShoppingCart } from "react-icons/fa";
-
-import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItems } from "../../redux/slice/cartSlice";
 
 const MenuContainer = () => {
   const [selected, setSelected] = useState(menus[0]);
   const [itemCount, setItemCount] = useState(0);
-  const [ItemId, setItemId] = useState();
+  const [itemId, setItemId] = useState(null);
+  const dispatch = useDispatch();
 
   const increment = (id) => {
     setItemId(id);
@@ -22,6 +23,23 @@ const MenuContainer = () => {
     setItemCount((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
+  const handleAddCart = (item) => {
+    if (!item) return;
+
+    const quantity = itemCount > 0 ? itemCount : 1;
+    const newObj = {
+      id: `${item.id}-${Date.now()}`,
+      name: item.name,
+      pricePerQuantity: item.price,
+      quantity,
+      price: item.price * quantity,
+    };
+
+    dispatch(addItems(newObj));
+    setItemCount(0);
+    setItemId(null);
+  };
+
   return (
     <section className="menu-container" aria-label="Restaurant menu">
       <div className="menu-container-header">
@@ -29,7 +47,7 @@ const MenuContainer = () => {
           <p className="menu-eyebrow">ORDER FROM MENU</p>
           <h2 className="menu-heading">Explore dishes</h2>
         </div>
-        <span className="menu-item-total">{selected?.items.length} dishes</span>
+        <span className="menu-item-total">{selected.items.length} dishes</span>
       </div>
 
       <div
@@ -37,29 +55,31 @@ const MenuContainer = () => {
         role="tablist"
         aria-label="Menu categories"
       >
-        {menus.map((menu) => {
+        {menus.map((category) => {
+          const isSelected = selected.id === category.id;
+
           return (
             <button
-              key={menu.id}
+              key={category.id}
               type="button"
-              className={`menu-category-card ${selected.id === menu.id ? "is-selected" : ""}`}
-              style={{ backgroundColor: menu.bgColor }}
+              className={`menu-category-card ${isSelected ? "is-selected" : ""}`}
+              style={{ backgroundColor: category.bgColor }}
               onClick={() => {
-                setSelected(menu);
+                setSelected(category);
                 setItemCount(0);
-                setItemId(0);
+                setItemId(null);
               }}
               role="tab"
-              aria-selected={selected.id === menu.id}
+              aria-selected={isSelected}
             >
               <div className="menu-category-topline">
                 <span className="menu-category-icon" aria-hidden="true">
-                  {menu.icon} {menu.name}
+                  {category.icon} {category.name}
                 </span>
-                {selected.id == menu.id && <GrRadialSelected />}
+                {isSelected && <GrRadialSelected />}
               </div>
               <span className="menu-category-count">
-                {menu.items.length} items
+                {category.items.length}
               </span>
             </button>
           );
@@ -75,61 +95,56 @@ const MenuContainer = () => {
       </div>
 
       <div className="menu-items-grid">
-        {selected?.items.map((menu) => {
-          return (
-            <article className="menu-item-card" key={menu.id}>
-              <div className="menu-item-info">
-                <div className="menu-item-topline">
-                  <span className="menu-item-icon" aria-hidden="true">
-                    {menu.icon} {menu.name}
-                  </span>
-                  <button
-                    type="button"
-                    className="cart-button"
-                    aria-label={`Add ${menu.name} to cart`}
-                    title={`Add ${menu.name} to cart`}
-                    onClick={() => increment(menu.id)}
-                  >
-                    <FaShoppingCart aria-hidden="true" />
-                  </button>
-                </div>
-                <span className="menu-item-category">
-                  {menu.category || "Chef's choice"}
+        {selected.items.map((item) => (
+          <article className="menu-item-card" key={item.id}>
+            <div className="menu-item-info">
+              <div className="menu-item-topline">
+                <span className="menu-item-icon" aria-hidden="true">
+                  {item.name}
                 </span>
-              </div>
-              <div className="menu-item-footer">
-                <p className="menu-item-price">
-                  <span>KES</span> {menu.price}
-                </p>
-
-                <div
-                  className="stepper"
-                  aria-label={`Quantity for ${menu.name}`}
+                <button
+                  type="button"
+                  className="cart-button"
+                  aria-label={`Add ${item.name} to cart`}
+                  title={`Add ${item.name} to cart`}
+                  onClick={() => handleAddCart(item)}
                 >
-                  <button
-                    type="button"
-                    className="stepper-btn"
-                    aria-label={`Remove one ${menu.name}`}
-                    onClick={() => decrement(menu.id)}
-                  >
-                    −
-                  </button>
-                  <span className="stepper-count">
-                    {menu.id === ItemId ? itemCount : "0"}
-                  </span>
-                  <button
-                    type="button"
-                    className="stepper-btn"
-                    aria-label={`Add one ${menu.name}`}
-                    onClick={() => increment(menu.id)}
-                  >
-                    +
-                  </button>
-                </div>
+                  <FaShoppingCart aria-hidden="true" />
+                </button>
               </div>
-            </article>
-          );
-        })}
+              <span className="menu-item-category">
+                {item.category || "Chef's choice"}
+              </span>
+            </div>
+            <div className="menu-item-footer">
+              <p className="menu-item-price">
+                <span>KES</span> {item.price}
+              </p>
+
+              <div className="stepper" aria-label={`Quantity for ${item.name}`}>
+                <button
+                  type="button"
+                  className="stepper-btn"
+                  aria-label={`Remove one ${item.name}`}
+                  onClick={() => decrement(item.id)}
+                >
+                  −
+                </button>
+                <span className="stepper-count">
+                  {item.id === itemId ? itemCount : "0"}
+                </span>
+                <button
+                  type="button"
+                  className="stepper-btn"
+                  aria-label={`Add one ${item.name}`}
+                  onClick={() => increment(item.id)}
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
