@@ -1,52 +1,123 @@
-.home{
-    display: flex;
-    flex-direction: row;
-    background-color: #1f1f1f;
-    height: calc(100vh - 5rem);
-    overflow: hidden;
-    gap: 1rem;
-    box-sizing: border-box;
-    align-items: flex-start;
-    width: 100%;
-    padding-left: 50px;
-  
-    
+.home {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  height: calc(100vh - 56px);
+  height: calc(100dvh - 56px);
+  box-sizing: border-box;
+  padding: 0 1.25rem 76px 50px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #1f1f1f;
 }
 
-
-
 /*LEFT DIV */
-.left-div{
+.left-div {
+  display: block;
+  flex: 1 1 0;
   min-width: 0;
-  display: inline;
-
 }
 
 /*RIGHT DIV */
 .right-div {
   display: flex;
+  flex: 0 1 550px;
+  min-width: 0;
   align-items: flex-start;
 }
-.popular-dishes {
-  display: block;
+
+.home .popular-dishes {
+  display: flex;
   width: 100%;
+  min-width: 0;
   min-height: 22rem;
-  margin: 0;
- 
+  max-height: calc(100dvh - 120px);
+  margin: 10px 0 0;
 }
 
+.home-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-.home-content{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin-top: 1rem;
+.home-content .mini-card {
+  flex: 1 1 0;
+  min-width: 0;
 }
-.home-content .mini-card{
-    flex:1;
+
+.home .search-contain {
+  width: 100%;
+  max-width: 100%;
 }
+
 @media (max-width: 900px) {
   .home {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 56px);
+    min-height: calc(100dvh - 56px);
+    padding: 0 1rem 76px;
+  }
+
+  .left-div,
+  .right-div {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .home .popular-dishes {
+    height: auto;
+    max-height: none;
+    margin-top: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .home {
+    gap: 0.75rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .home-content {
+    gap: 0.65rem;
+  }
+
+  .home-content .mini-card {
+    padding: 0.9rem 0.8rem;
+  }
+
+  .home-content .mini-card-header {
+    gap: 0.5rem;
+  }
+
+  .home-content .mini-card-title {
+    font-size: 0.9rem;
+  }
+
+  .home-content .mini-card-icon {
+    width: 2.35rem;
+    height: 2.35rem;
+    flex: 0 0 2.35rem;
+  }
+
+  .home .recent-orders {
+    min-height: 0;
+    padding: 1rem 0.85rem;
+  }
+
+  .home .recent-orders-body {
+    min-height: 0;
+  }
+
+  .home .popular-dishes {
+    min-height: 0;
+    padding: 0.9rem 0.75rem;
+    border-radius: 16px;
+  }
+}
+
